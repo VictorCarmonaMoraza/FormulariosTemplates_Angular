@@ -12,8 +12,12 @@
           <input type="text" class="form-control"
           ngModel
           name="producto"
-          placeholder="Nombre del producto">
-          <span class="form-text text-danger">Debe de ser de 3 letras</span>
+          placeholder="Nombre del producto"
+          required
+          minlength="3">
+          <!--Cuandoe el campo formulario es invalido y ha sido tocado salta el error-->
+          <span *ngIf="miFormulario.controls.producto?.invalid && miFormulario.controls.producto?.touched"
+           class="form-text text-danger">Debe de ser de 3 letras</span>
         </div>
       </div>
 
@@ -56,9 +60,18 @@
 <div class="row">
   <div class="col">
     <span>Valid</span>
+    <!--Si es false el formulario no es valido-->
     <pre>{{miFormulario.valid | json}}</pre>
 
-    <span>Value</span>
+    <span>Pristine</span>
+    <!--Nos dice que no se cambiaron ninguno de los valores con los que se presento el formulario-->
+    <pre>{{miFormulario.pristine}}</pre>
+
+    <span>Touched</span>
+    <!--Significa que se toco el formulario aunque no se cambio nada-->
+    <pre>{{miFormulario.touched}}</pre>
+
+    <span>Pristine</span>
     <pre>{{miFormulario.value | json}}</pre>
   </div>
 </div>
