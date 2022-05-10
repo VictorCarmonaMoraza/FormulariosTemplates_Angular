@@ -9,46 +9,35 @@
       <div class="mb-3 row">
         <label class="col-sm-3 col-form-label">Producto</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control"
-          ngModel
-          name="producto"
-          placeholder="Nombre del producto"
-          required
-          minlength="3">
+          <input type="text" class="form-control" ngModel name="producto" placeholder="Nombre del producto" required
+            minlength="3">
           <!--Cuandoe el campo formulario es invalido y ha sido tocado salta el error-->
-          <span *ngIf="nombreValido()"
-           class="form-text text-danger">Debe de ser de 3 letras</span>
+          <span *ngIf="nombreValido()" class="form-text text-danger">Debe de ser de 3 letras</span>
         </div>
       </div>
 
-       <!--Campo Precio-->
+      <!--Campo Precio-->
       <div class="mb-3 row">
         <label class="col-sm-3 col-form-label">Precio</label>
         <div class="col-sm-9">
-          <input type="number"
-           class="form-control"
-           ngModel
-          name="precio"
-           placeholder="Precio del producto"
-           required>
+          <input type="number" class="form-control" ngModel name="precio" placeholder="Precio del producto" required>
+          <span *ngIf="precioValido()" class="form-text text-danger">El precio debe ser 0 o mayor</span>
+
         </div>
       </div>
 
-       <!--Existencias del Product-->
+      <!--Existencias del Product-->
       <div class="mb-3 row">
         <label class="col-sm-3 col-form-label">Existencias</label>
         <div class="col-sm-9">
-          <input type="number" class="form-control"
-          ngModel
-          name="existencias"
-          placeholder="Existencias del producto">
+          <input type="number" class="form-control" ngModel name="existencias" placeholder="Existencias del producto">
         </div>
       </div>
 
       <!--Boton de Submit-->
       <div class="row">
         <div class="col">
-          <button type="submit" class="btn btn-primary float-end">Guardar</button>
+          <button type="submit" class="btn btn-primary float-end" [disabled]="miFormulario.invalid">Guardar</button>
         </div>
       </div>
 
