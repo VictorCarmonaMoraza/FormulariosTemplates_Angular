@@ -1,3 +1,4 @@
+import { Persona } from './../../interfaces/persona.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +6,20 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dinamicos.component.html',
   styleUrls: ['./dinamicos.component.css']
 })
-export class DinamicosComponent implements OnInit {
+export class DinamicosComponent{
+
+  persona: Persona = {
+    nombre: 'Victor',
+    favoritos: [
+      { id: 1, nombre: 'Metal Gear' },
+      {id:2,nombre:'Ozone'}
+    ]
+}
 
   constructor() { }
 
-  ngOnInit(): void {
+  guardar() {
+    console.log('formulario posteado');
   }
 
 }
