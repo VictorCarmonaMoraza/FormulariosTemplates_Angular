@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from './interfaces/menuItem.interface';
+import { MenuItem } from '../interfaces/menuItem.interface';
 
 @Component({
   selector: 'app-sidemenu',
