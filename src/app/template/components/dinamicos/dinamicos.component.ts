@@ -1,4 +1,4 @@
-import { Persona } from './../../interfaces/persona.interface';
+import { Favorito, Persona } from './../../interfaces/persona.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dinamicos.component.css']
 })
 export class DinamicosComponent{
+
+
+  nuevoJuego: string = '';
 
   persona: Persona = {
     nombre: 'Victor',
@@ -17,6 +20,17 @@ export class DinamicosComponent{
 }
 
   constructor() { }
+
+  agregarJuego() {
+    const nuevoFavorito: Favorito = {
+      id: this.persona.favoritos.length + 1,
+      nombre: this.nuevoJuego
+    }
+
+    this.persona.favoritos.push({ ...nuevoFavorito });
+    //Limpiarmos el campo
+    this.nuevoJuego = '';
+  }
 
   guardar() {
     console.log('formulario posteado');

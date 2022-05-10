@@ -6,7 +6,7 @@ export interface Persona{
   favoritos: Favorito[];
 }
 
-interface Favorito{
+export interface Favorito{
   id: number;
   nombre:string
 }
