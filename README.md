@@ -1,2 +1,2 @@
-# 15 - Agregar juegos favoritos
+# 16 - Template: Radio, Checky Switches
  
